@@ -5,8 +5,7 @@ from odoo import models, fields, api
 
 class Course(models.Model):
     _name = 'openacademy.course'
-    _description = 'openacademy.course'
+    _description = 'Course'
     
-    name = fields.Char()
-    description = fields.Text()
-    price = fields.Integer()
+    name = fields.Char('Name', required=True)
+    description = fields.Text('Description', required=False)

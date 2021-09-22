@@ -4,22 +4,19 @@
           <record id="course0" model="openacademy.course">
             <field name="name">Course 0</field>
             <field name="description">Description of course 0</field>
-            <field name="price">65.00</field>
           </record>
 
           <record id="course1" model="openacademy.course">
             <field name="name">Course 1</field>
             <field name="description">Description of course 1</field>
-            <field name="price">25.00</field>
           </record>
 
           <record id="course2" model="openacademy.course">
             <field name="name">Course 2</field>
             <field name="description">Description of course 2</field>
-            <field name="price">44.99</field>
           </record>
 
-          <record id="course3" model="openacademy.course">
+          <!-- <record id="course3" model="openacademy.course">
             <field name="name">Course 3</field>
             <field name="description">Description of course 3</field>
             <field name="price">40.00</field>
@@ -29,7 +26,7 @@
             <field name="name">Course 4</field>
             <field name="description">Description of course 4</field>
             <field name="price">60.00</field>
-          </record>
+          </record> -->
 
     </data>
 </odoo>
