@@ -9,4 +9,4 @@ class Course(models.Model):
     
     name = fields.Char()
     description = fields.Text()
-    free = fields.Boolean()
+    price = fields.Integer()
