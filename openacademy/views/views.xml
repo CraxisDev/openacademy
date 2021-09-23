@@ -1,26 +1,41 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="openacademy.list">
-      <field name="name">firstModule list</field>
-      <field name="model">openacademy.openacademy</field>
+
+    <record model="ir.ui.view" id="course_list">
+      <field name="name">course_list</field>
+      <field name="model">course</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
         </tree>
       </field>
     </record>
--->
+
+  <record model="ir.ui.view" id="course_form">
+      <field name="name">Courses Form</field>
+      <field name="model">course</field>
+      <field name="arch" type="xml">
+        <form>
+          <h1><field name="name"/></h1>
+          <notebook>
+            <page string="Description">
+              <field name="description"/>
+            </page>
+          </notebook>
+        </form>
+      </field>
+  </record>
+
 
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="act_course_tree">
-      <field name="name">Open Academy window</field>
-      <field name="res_model">openacademy.course</field>
+      <field name="name">Academy</field>
+      <field name="res_model">course</field>
       <field name="view_mode">tree,form</field>
+      <field name="search_view_id" ref="course_list"/>
+      <field name="view_id" ref="course_list"/>
     </record>
 
 
@@ -42,7 +57,7 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="openacademy" id="academy_root"/>
+    <menuitem name="Open Academy" id="academy_root"/>
 
     <!-- menu categories -->
 
