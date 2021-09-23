@@ -8,6 +8,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -17,10 +18,15 @@
       <field name="model">course</field>
       <field name="arch" type="xml">
         <form>
+          <label for="name" class="oe_edit_only">Name</label>
           <h1><field name="name"/></h1>
           <notebook>
             <page string="Description">
+              <label for="description" class="oe_edit_only">Description</label>
               <field name="description"/>
+            </page>
+            <page string="Another Tab">
+              <p>Hello World!</p>
             </page>
           </notebook>
         </form>
