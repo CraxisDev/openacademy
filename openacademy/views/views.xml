@@ -10,6 +10,7 @@
         <tree>
           <field name="name"/>
           <field name="description"/>
+          <field name="responsible"/>
         </tree>
       </field>
     </record>
@@ -23,8 +24,10 @@
           <h1><field name="name"/></h1>
           <notebook>
             <page string="Description">
-              <label for="description" class="oe_edit_only">Description</label>
-              <field name="description"/>
+              <group>
+                <field name="responsible"/>
+                <field name="description"/>
+              </group>
             </page>
             <page string="Another Tab">
               <p>Hello World!</p>
@@ -83,6 +86,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="instructor"/>
           <field name="start_date"/>
           <field name="duration"/>
           <field name="seats"/>
@@ -98,7 +102,8 @@
           <label for="name" class="oe_edit_only">Name</label>
           <h1><field name="name"/></h1>
           <group string="Information">
-            <field name="start_date"></field>
+            <field name="instructor"/>
+            <field name="start_date"/>
             <field name="duration"/>
             <field name="seats"/>
           </group>
