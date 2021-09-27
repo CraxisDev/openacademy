@@ -1,5 +1,6 @@
 <odoo>
   <data>
+
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="course_list">
@@ -67,16 +68,58 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Open Academy" id="openacademy" parent="academy_root"/>
-    <menuitem name="Courses" id="openacademy_course" parent="openacademy"
+    <menuitem name="Academy" id="academy" parent="academy_root"/>
+    <menuitem name="Courses" id="openacademy_course" parent="academy"
      action="act_course_tree"/>
 
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="openacademy.menu_1_list" parent="openacademy.menu_1"
-              action="act_course_tree"/>
-    <menuitem name="Server to list" id="openacademy" parent="openacademy.menu_2"
-              action="openacademy.action_server"/>
--->
+
+<!-- __________________________Sessions__________________________ -->
+
+        <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="session_list">
+      <field name="name">session_list</field>
+      <field name="model">session</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="start_date"/>
+          <field name="duration"/>
+          <field name="seats"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="session_form">
+      <field name="name">Session Form</field>
+      <field name="model">session</field>
+      <field name="arch" type="xml">
+        <form>
+          <label for="name" class="oe_edit_only">Name</label>
+          <h1><field name="name"/></h1>
+          <notebook>
+            <page string="Information">
+              <field name="name"/>
+              <field name="start_date"/>
+              <field name="duration"/>
+              <field name="seats"/>
+            </page>
+          </notebook>
+        </form>
+      </field>
+    </record>
+
+<!-- Session window action -->
+
+    <record model="ir.actions.act_window" id="act_session_tree">
+      <field name="name">Session</field>
+      <field name="res_model">session</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="session_list"/>
+    </record>
+
+    <menuitem name="Sessions" id="openacademy_session" parent="academy" 
+      action="act_session_tree"/>
+
   </data>
 </odoo>
