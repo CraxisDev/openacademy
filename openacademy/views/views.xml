@@ -38,7 +38,7 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="act_course_tree">
-      <field name="name">Academy</field>
+      <field name="name">Courses</field>
       <field name="res_model">course</field>
       <field name="view_mode">tree,form</field>
       <field name="search_view_id" ref="course_list"/>
@@ -97,14 +97,11 @@
         <form>
           <label for="name" class="oe_edit_only">Name</label>
           <h1><field name="name"/></h1>
-          <notebook>
-            <page string="Information">
-              <field name="name"/>
-              <field name="start_date"/>
-              <field name="duration"/>
-              <field name="seats"/>
-            </page>
-          </notebook>
+          <group string="Information">
+            <field name="start_date"></field>
+            <field name="duration"/>
+            <field name="seats"/>
+          </group>
         </form>
       </field>
     </record>

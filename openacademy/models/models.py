@@ -15,6 +15,6 @@ class Session(models.Model):
     _description = 'Session'
     
     name = fields.Char('Name', required=True)
-    start_date = fields.Char('Date Start', required=True)
+    start_date = fields.Date('Date Start', required=True)
     duration = fields.Float('Duration', help="Duration in days", required=True)
     seats = fields.Integer('Seats', help="Seats Quantity", required=False)
