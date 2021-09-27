@@ -8,6 +8,7 @@ class Course(models.Model):
     _description = 'Course'
     
     name = fields.Char('Name', required=True)
+    sessions = fields.One2many('session', 'course')
     description = fields.Text('Description', required=False)
     responsible = fields.Many2one('res.users')
     
@@ -17,6 +18,7 @@ class Session(models.Model):
     
     name = fields.Char('Name', required=True)
     instructor = fields.Many2one('res.partner')
+    course = fields.Many2one('course')
     start_date = fields.Date('Date Start', required=True)
     duration = fields.Float('Duration', help="Duration in days", required=True)
     seats = fields.Integer('Seats', help="Seats Quantity", required=False)
